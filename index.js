@@ -149,11 +149,11 @@ Car.prototype.drive = function(distance){
         + Should return a string "Playing with x", x being the favorite toy.
 */
 function Baby(name, age, favoriteToy) {
-   Person.call(this, name, age);
+   Person.call(this, name, age);             //inherits Person class, this is how 
    this.favoriteToy = favoriteToy;
 }
 
-Baby.prototype = Object.create(Person.prototype);
+Baby.prototype = Object.create(Person.prototype);    // allows Baby to inherit Person's methods
 Baby.prototype.play = function(){
   return `Playing with ${this.favoriteToy}`;
 }
@@ -162,10 +162,10 @@ Baby.prototype.play = function(){
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Window Binding - when none of the other rules apply, this will return the window or the global object in node or undefined in strict mode.
+  2. Implicit Binding - when the function is invoked look to the left of the dot, that's what this referrs to. 
+  3. Explicit Binding - use .call, .apply, or .bind to explicitly 
+  4. New binding - when a function is created as a constructor this points to the newly created object.
 */
 
 
